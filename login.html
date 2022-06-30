@@ -1,0 +1,48 @@
+<html>
+	<head>
+            <title>login page</title>
+            <link rel="stylesheet" href="style.css">
+			<script type="text/javascript">
+			function valid()
+            {
+              var email = document.getElementById('email').value;
+              var pass = document.getElementById('pass').value;
+              var remail = /[A-Za-z0-9]{1,}@[y][a][s][h][.][a-z]{2,3}/
+              var rpass = /(?=.*[!@#$%^&*])^[A-Za-z0-9!@#$%^&*]{9,21}/
+			  document.write("Hello");
+              if(remail.test(email))
+              {
+              document.getElementById('cemail').innerHTML="";
+              }
+              else
+              {
+              document.getElementById('cemail').innerHTML="Enter valid email";
+              return false;
+              }
+              if(rpass.test(pass))
+              {
+              document.getElementById('cpass').innerHTML="";
+              document.write("email is " + email + "<br>");
+              }
+              else
+              {
+              document.getElementById('cpass').innerHTML="Enter valid password";
+              return false;
+               }
+            }
+</script>
+
+        </head>
+	<body>
+		<form class="box" onsubmit="return valid()">
+                 <h1>login</h1>
+                 <input type="text" name="name" placeholder="Enter your username" id="name" required>
+                 <input type="email" name="email" placeholder="Enter your emial Id" id="email" required><span id="cemail"></span>
+                 <input type="password" name="pass" placeholder="Enter your password" id="pass" required><span id="cpass"></span>
+                 <input type="submit" value="login" onclick="valid()">
+                </form>
+				<div id='result'>
+				</div>
+
+				</body>
+</html>
